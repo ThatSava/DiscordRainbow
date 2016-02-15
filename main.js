@@ -40,24 +40,20 @@ function getRoleID(){
   }
 }
 
-//Generates a random html color
-function getRandomColor() {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
+function changeColor(callback) {
+  var fs = require('fs');
+  fs.readFile( __dirname + '/colors.txt', function (err, data) {
+    if (err) {
+      throw err;
     }
-    return color;
-}
-
-//Changes the group's color when called
-function changeColor() {
-  var color = getRandomColor();
-  console.log("Changing the color! If you like this color, you can use it with: " + color);
-  bot.editRole({
-    server: getServerID(),
-    role: getRoleID(),
-    color: color
+    colors = data.toString().split("\n");
+    choosen = colors[Math.floor(Math.random() * colors.length)];
+    console.log("Setting the color to: " + choosen);
+    bot.editRole({
+      server: getServerID(),
+      role: getRoleID(),
+      color: choosen
+    });
   });
 }
 
