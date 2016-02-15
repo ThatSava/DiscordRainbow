@@ -1,0 +1,17 @@
+{"name": "DiscordRainbow",
+  "version": "1.0.0",
+  "description": "Nodejs app that assigns a random color to a role on chat message or an interval",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrejsavikin/DiscordRainbow"
+  },
+  "author": "Sava",
+  "license": "https://github.com/andrejsavikin/DiscordRainbow/blob/master/LICENSE",
+  "bugs": {
+    "url": "https://github.com/andrejsavikin/DiscordRainbow/issues"
+  },
+  "dependencies": {
+    "discord.io": "^1.7.1"
+  }
+}
